@@ -77,8 +77,13 @@ write_csv(Links.filtered,"Links_filtered.csv")
 
 # individuals
 library(rtoot)
+
+
+
 token = auth_setup("mapstodon.space", "user")
 
+directory = get_instance_directory("mapstodon.space",local = TRUE,limit=500)
+attr(directory,"headers")
 
 folowers = get_account_followers("109302019656613226",token=token,limit=200)
 attr(folowers,"headers")
